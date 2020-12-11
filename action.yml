@@ -1,0 +1,17 @@
+name: Get environment information
+description: |
+  Reads files like go.mod, package.json, etc. and outputs useful
+  information like Go version, Node version, etc.
+inputs:
+  dir:
+    description: Path to directory to look inside. By default it will look in the current directory.
+    required: true
+    default: "./"
+outputs:
+  go_version:
+    description: "Version of Go mentioned in go.mod"
+  node_version:
+    description: "Version of Node mentioned in package.json"
+runs:
+  using: "node12"
+  main: "dist/index.js"
