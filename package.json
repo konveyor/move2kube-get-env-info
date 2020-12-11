@@ -1,0 +1,41 @@
+{
+  "name": "get-env-info",
+  "version": "1.0.0",
+  "description": "A github action to read some files and output some useful information about the environment.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "pack": "ncc build --source-map -o dist src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "all": "npm run format && npm run lint && npm run build && npm run pack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konveyor/get-env-info.git"
+  },
+  "keywords": [
+    "github",
+    "action"
+  ],
+  "author": "Harikrishnan Balagopal",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/konveyor/get-env-info/issues"
+  },
+  "homepage": "https://github.com/konveyor/get-env-info#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.12",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "@vercel/ncc": "^0.25.1",
+    "eslint": "^7.15.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  }
+}
