@@ -1,7 +1,8 @@
 {
   "name": "get-env-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A github action to read some files and output some useful information about the environment.",
+  "packageManager": "pnpm@8.15.3",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,8 +10,8 @@
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build --source-map -o dist src/main.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "all": "npm run format && npm run lint && npm run build && npm run pack"
+    "clean": "rm -rf dist/",
+    "all": "pnpm run clean && pnpm run format && pnpm run lint && pnpm run build && pnpm run pack"
   },
   "repository": {
     "type": "git",
@@ -27,15 +28,15 @@
   },
   "homepage": "https://github.com/konveyor/get-env-info#readme",
   "devDependencies": {
-    "@types/node": "^14.14.12",
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
-    "@vercel/ncc": "^0.25.1",
-    "eslint": "^7.15.0",
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.2"
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6"
+    "@actions/core": "^1.10.1"
   }
 }
